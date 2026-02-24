@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Google</title>
     <link rel="icon" type="image/png" href="https://www.google.com/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body { 
-            font-family: 'Lexend', sans-serif; 
+            font-family: 'Lexend', arial, sans-serif; 
             margin: 0; padding: 0; background: #fff; 
             height: 100vh; display: flex; flex-direction: column; 
             -webkit-font-smoothing: antialiased;
@@ -19,24 +19,33 @@
         }
         .top-nav span { margin-left: 15px; cursor: pointer; }
 
-        .main-content { flex-grow: 1; display: flex; flex-direction: column; align-items: center; padding-top: 80px; }
+        .main-content { 
+            flex-grow: 1; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding-top: 80px; 
+            text-align: center; /* Ensures buttons/logo center */
+        }
 
-        /* The Logo: Smashed together and bold to avoid the 'thin' look */
-        .logo { 
-            font-size: 92px; 
-            font-weight: 600; /* Bold weight prevents the thin look */
+        /* The Logo: Using the official image is safer for alignment */
+        .logo-img { 
             margin-bottom: 28px; 
-            letter-spacing: -5px; /* Tighter spacing for the 'G o o g l e' look */
             user-select: none;
         }
-        .g { color: #4285F4; } .o1 { color: #EA4335; } .o2 { color: #FBBC05; }
-        .g2 { color: #4285F4; } .l { color: #34A853; } .e { color: #EA4335; }
 
-        .search-container { width: 100%; max-width: 584px; }
+        .search-container { 
+            width: 100%; 
+            max-width: 584px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the buttons under the search bar */
+        }
         
         .search-box {
             width: 100%; height: 44px; border: 1px solid #dfe1e5; border-radius: 24px;
             display: flex; align-items: center; transition: box-shadow 0.2s;
+            background: #fff;
         }
         .search-box:hover, .search-box:focus-within {
             box-shadow: 0 1px 6px rgba(32,33,36,0.28); border-color: rgba(0,0,0,0);
@@ -51,18 +60,21 @@
             font-family: 'Lexend', sans-serif;
         }
 
-        .buttons { margin-top: 28px; }
+        .buttons { margin-top: 28px; display: flex; justify-content: center; }
+        
         button {
             background-color: #f8f9fa; border: 1px solid #f8f9fa; border-radius: 4px;
             color: #3c4043; font-size: 14px; margin: 11px 4px; padding: 0 16px;
             height: 36px; min-width: 54px; cursor: pointer;
-            font-family: 'Lexend', sans-serif; font-weight: 400;
+            font-family: 'Lexend', sans-serif; 
+            font-weight: 400; /* Keeps button text from being too thick */
         }
         button:hover { border: 1px solid #dadce0; color: #202124; box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
 
-        footer { background: #f2f2f2; color: #70757a; font-size: 14px; width: 100%; }
-        .footer-top { padding: 15px 30px; border-bottom: 1px solid #dadce0; }
+        footer { background: #f2f2f2; color: #70757a; font-size: 14px; width: 100%; margin-top: auto; }
+        .footer-top { padding: 15px 30px; border-bottom: 1px solid #dadce0; text-align: left; }
         .footer-bottom { padding: 15px 30px; display: flex; justify-content: space-between; }
+        .footer-bottom span { margin-right: 25px; cursor: pointer; }
 
         #troll-container {
             display: none; position: fixed; top: 0; left: 0;
@@ -78,8 +90,8 @@
     </div>
 
     <div class="main-content">
-        <div class="logo">
-            <span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span class="l">l</span><span class="e">e</span>
+        <div class="logo-img">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" width="272" height="92" alt="Google">
         </div>
         
         <form id="trollForm" class="search-container">
@@ -100,10 +112,10 @@
     </div>
 
     <footer>
-        <div class="footer-top">United States</div>
+        <div class="footer-top">Malaysia</div>
         <div class="footer-bottom">
-            <div><span>About</span><span>Advertising</span><span>Business</span></div>
-            <div><span>Privacy</span><span>Terms</span><span>Settings</span></div>
+            <div><span>About</span> <span>Advertising</span> <span>Business</span> <span>How Search works</span></div>
+            <div><span>Privacy</span> <span>Terms</span> <span>Settings</span></div>
         </div>
     </footer>
 
@@ -129,5 +141,3 @@
     </script>
 </body>
 </html>
-
-
